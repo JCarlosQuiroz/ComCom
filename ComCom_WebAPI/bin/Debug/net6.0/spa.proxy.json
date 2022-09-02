@@ -1,0 +1,8 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "",
+"LaunchCommand": "",
+"WorkingDirectory": "C:\\Users\\Equipo\\Documents\\Developments\\ComCom_WebAPI\\ComCom_WebAPI",
+"MaxTimeoutInSeconds": "120"
+}
+}

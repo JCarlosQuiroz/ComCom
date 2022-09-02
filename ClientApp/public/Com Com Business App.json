@@ -1,0 +1,246 @@
+{
+	"id": "0779a7e8-08d7-419c-8f5d-8fca39a2dd4d",
+	"acceptMappedClaims": null,
+	"accessTokenAcceptedVersion": null,
+	"addIns": [],
+	"allowPublicClient": null,
+	"appId": "5c2132d6-850f-496f-9546-5fc27d5db1bd",
+	"appRoles": [],
+	"oauth2AllowUrlPathMatching": false,
+	"createdDateTime": "2022-06-16T04:37:45Z",
+	"description": null,
+	"certification": null,
+	"disabledByMicrosoftStatus": null,
+	"groupMembershipClaims": "All",
+	"identifierUris": [
+		"api://security/user"
+	],
+	"informationalUrls": {
+		"termsOfService": null,
+		"support": null,
+		"privacy": null,
+		"marketing": null
+	},
+	"keyCredentials": [],
+	"knownClientApplications": [],
+	"logoUrl": "https://aadcdn.msftauthimages.net/dbd5a2dd-bigjk9cdaj-r5pkyw7eilwiovvotahu8lk-j-6fooze/appbranding/dvo5delianm5fxtqq6b3ggg-fqeyvclvlrvktjaukao/1033/bannerlogo?ts=637909525857664954",
+	"logoutUrl": "https://comcombusinessapp.comcomindustries.onmicrosoft.com/?appproxy=logout",
+	"name": "Com Com Business App",
+	"notes": null,
+	"oauth2AllowIdTokenImplicitFlow": true,
+	"oauth2AllowImplicitFlow": true,
+	"oauth2Permissions": [
+		{
+			"adminConsentDescription": "Permite leer su informacion",
+			"adminConsentDisplayName": "Leer informacion de usuario",
+			"id": "e8e50917-e03d-4181-9ac8-306e004c7c2e",
+			"isEnabled": true,
+			"lang": null,
+			"origin": "Application",
+			"type": "Admin",
+			"userConsentDescription": "Permite leer su informacion",
+			"userConsentDisplayName": "Leer informacion de usuario",
+			"value": "ComCom_Business_App"
+		}
+	],
+	"oauth2RequirePostResponse": false,
+	"optionalClaims": {
+		"idToken": [
+			{
+				"name": "groups",
+				"source": null,
+				"essential": false,
+				"additionalProperties": []
+			},
+			{
+				"name": "onprem_sid",
+				"source": null,
+				"essential": false,
+				"additionalProperties": []
+			},
+			{
+				"name": "login_hint",
+				"source": null,
+				"essential": false,
+				"additionalProperties": []
+			}
+		],
+		"accessToken": [
+			{
+				"name": "email",
+				"source": null,
+				"essential": false,
+				"additionalProperties": []
+			},
+			{
+				"name": "onprem_sid",
+				"source": null,
+				"essential": false,
+				"additionalProperties": []
+			},
+			{
+				"name": "idtyp",
+				"source": null,
+				"essential": false,
+				"additionalProperties": []
+			},
+			{
+				"name": "login_hint",
+				"source": null,
+				"essential": false,
+				"additionalProperties": []
+			}
+		],
+		"saml2Token": []
+	},
+	"orgRestrictions": [],
+	"parentalControlSettings": {
+		"countriesBlockedForMinors": [],
+		"legalAgeGroupRule": "Allow"
+	},
+	"passwordCredentials": [
+		{
+			"customKeyIdentifier": null,
+			"endDate": "2024-06-16T15:06:44.8623651Z",
+			"keyId": "fa636bbe-1336-4525-801a-26dfb9cb6d2d",
+			"startDate": "2022-06-16T15:06:44.8623651Z",
+			"value": null,
+			"createdOn": "2022-06-16T15:06:44.9873743Z",
+			"hint": "bDM",
+			"displayName": "Secret created by dotnet-msidentity tool"
+		}
+	],
+	"preAuthorizedApplications": [
+		{
+			"appId": "5c2132d6-850f-496f-9546-5fc27d5db1bd",
+			"permissionIds": [
+				"e8e50917-e03d-4181-9ac8-306e004c7c2e"
+			]
+		}
+	],
+	"publisherDomain": "comcomindustries.onmicrosoft.com",
+	"replyUrlsWithType": [
+		{
+			"url": "https://localhost:7104/signin-oidc",
+			"type": "Spa"
+		},
+		{
+			"url": "https://localhost:44434/signin-oidc",
+			"type": "Spa"
+		},
+		{
+			"url": "https://localhost:44334/signin-oidc",
+			"type": "Spa"
+		},
+		{
+			"url": "https://comcombusinessapp.comcomindustries.onmicrosoft.com/",
+			"type": "Spa"
+		},
+		{
+			"url": "http://localhost:5104/signin-oidc",
+			"type": "Spa"
+		},
+		{
+			"url": "http://localhost:23601/signin-oidc",
+			"type": "Spa"
+		},
+		{
+			"url": "https://localhost:44434/",
+			"type": "Spa"
+		}
+	],
+	"requiredResourceAccess": [
+		{
+			"resourceAppId": "00000005-0000-0ff1-ce00-000000000000",
+			"resourceAccess": [
+				{
+					"id": "8e5870bb-8808-44dc-8e10-c509ed919ddd",
+					"type": "Scope"
+				},
+				{
+					"id": "5db81a03-0de0-432b-b31e-71d57c8d2e0b",
+					"type": "Scope"
+				}
+			]
+		},
+		{
+			"resourceAppId": "00000012-0000-0000-c000-000000000000",
+			"resourceAccess": [
+				{
+					"id": "c9c9a04d-3b66-4ca8-a00c-fca953e2afd3",
+					"type": "Scope"
+				}
+			]
+		},
+		{
+			"resourceAppId": "00000004-0000-0ff1-ce00-000000000000",
+			"resourceAccess": [
+				{
+					"id": "44e84b5a-52a3-4b41-975c-6c960414004a",
+					"type": "Scope"
+				},
+				{
+					"id": "d0c8f2ea-8f80-4289-8e78-4bc821cde1bc",
+					"type": "Scope"
+				},
+				{
+					"id": "208afe8f-9dfa-4f72-a755-6b810d61f42f",
+					"type": "Scope"
+				},
+				{
+					"id": "4d48dea7-b534-4bca-9d76-5f8a7a8edae8",
+					"type": "Scope"
+				},
+				{
+					"id": "5bdeff8b-73d9-4b8a-9e9b-d44c6105f9b4",
+					"type": "Scope"
+				}
+			]
+		},
+		{
+			"resourceAppId": "5c2132d6-850f-496f-9546-5fc27d5db1bd",
+			"resourceAccess": [
+				{
+					"id": "e8e50917-e03d-4181-9ac8-306e004c7c2e",
+					"type": "Scope"
+				}
+			]
+		},
+		{
+			"resourceAppId": "499b84ac-1321-427f-aa17-267ca6975798",
+			"resourceAccess": [
+				{
+					"id": "ee69721e-6c3a-468f-a9ec-302d16a4c599",
+					"type": "Scope"
+				}
+			]
+		},
+		{
+			"resourceAppId": "c5393580-f805-4401-95e8-94b7a6ef2fc2",
+			"resourceAccess": [
+				{
+					"id": "594c1fb6-4f81-4475-ae41-0c394909246c",
+					"type": "Scope"
+				}
+			]
+		},
+		{
+			"resourceAppId": "00000003-0000-0000-c000-000000000000",
+			"resourceAccess": [
+				{
+					"id": "64a6cdd6-aab1-4aaf-94b8-3cc8405e90d0",
+					"type": "Scope"
+				},
+				{
+					"id": "e1fe6dd8-ba31-4d61-89e7-88639da4683d",
+					"type": "Scope"
+				}
+			]
+		}
+	],
+	"samlMetadataUrl": null,
+	"signInUrl": "https://comcombusinessapp.comcomindustries.onmicrosoft.com/",
+	"signInAudience": "AzureADMyOrg",
+	"tags": [],
+	"tokenEncryptionKeyId": null
+}

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "HiW/sIKivpSHo1n6BvTpmPMsEK/IuvukoM62KjlkNFI=",
+  "Source": "ComCom_WebAPI",
+  "BasePath": "_content/ComCom_WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
