@@ -1,39 +1,28 @@
+import React from 'react';
 import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
-import { Image } from "@fluentui/react";
-import * as React from 'react';
-
-// MSAL imports
-import { MsalProvider } from "@azure/msal-react";
-import { IPublicClientApplication } from "@azure/msal-browser";
-import { CustomNavigationClient } from "./utils/NavigationClient";
-
-// Sample app imports
-
 import { IImageProps } from "@fluentui/react";
-
-import routes from "./constants/RouteConfig";
-import { PageLayout } from "./pages/PageLayout";
-import { Images } from "./styles/Theme";
-
-type AppProps = {
-  pca: IPublicClientApplication;
-};
+import { IPublicClientApplication } from '@azure/msal-browser';
+import { Images } from './styles/Theme';
+import { CustomNavigationClient } from './utils/NavigationClient';
+import { MsalProvider } from '@azure/msal-react';
+import { PageLayout } from './pages/PageLayout';
+import routes from './constants/RouteConfig';
 
 export const imageProps: Partial<IImageProps> = {
   imageFit: 4,
   src: Images.comcomlogo,
-  alt: "Logotipo Valhpac Horizontal",
+  alt: "reactLogo",
   style: {
     position: "fixed",
     margin: "auto",
-    marginTop: "50px",
+    marginTop: "150px",
     marginLeft: "auto",
     marginRight: "auto",
     display: "block",
     width: "auto",
     height: "auto",
     maxWidth: "100%",
-    minWidth: "50%",
+    minWidth: "100%",
     transform: "translate(-50%, -50%)",
     border: "none",
     borderRadius: "0px",
@@ -42,7 +31,7 @@ export const imageProps: Partial<IImageProps> = {
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     backgroundSize: "cover",
-    opacity: "20%",
+    opacity: "29%",
     filter: "none",
     WebkitFilter: "none",
     WebkitBackdropFilter: "none",
@@ -67,20 +56,20 @@ export const imageProps: Partial<IImageProps> = {
   }),
 };
 
-
+type AppProps = {
+  pca: IPublicClientApplication;
+};
 
 export default function App({ pca }: AppProps) {
-  // The next 3 lines are optional. This is how you configure MSAL to take advantage of the router's navigate functions when MSAL redirects between pages in your app
   const history = useHistory();
   const navigationClient = new CustomNavigationClient(history);
   pca.setNavigationClient(navigationClient);
 
   return (
     <React.Fragment>
-    {/* <MsalProvider instance={pca}> */}
+    <MsalProvider instance={pca}>
       <BrowserRouter>
       <PageLayout />
-      <Image {...imageProps} />
         <Switch>
         {routes.map(route => 
           <Route key={route.path} path={route.path} exact={route.exact}>
@@ -88,18 +77,7 @@ export default function App({ pca }: AppProps) {
           </Route>)}
         </Switch>
       </BrowserRouter>
-    {/* </MsalProvider> */}
+    </MsalProvider>
     </React.Fragment>
   );
 }
-
-
-
-
-
-
-
-
-
-
-

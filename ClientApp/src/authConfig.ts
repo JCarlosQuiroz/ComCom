@@ -6,12 +6,12 @@ export const msalConfig: Configuration = {
         clientId: "5c2132d6-850f-496f-9546-5fc27d5db1bd",
         authority: "https://login.microsoftonline.com/13a997af-eb34-44c3-8ea9-177642002dc6",
         knownAuthorities: ["https://login.microsoftonline.com/common"],
-        redirectUri: "https://localhost:44434/",
-        postLogoutRedirectUri: "https://localhost:44434/logout",
+        redirectUri: "https://localhost:44441/",
+        postLogoutRedirectUri: "https://comcombusinessapp.comcomindustries.onmicrosoft.com/?appproxy=logout",
         navigateToLoginRequestUrl: true,
     },
     cache: {
-        cacheLocation: "localStorage",
+        cacheLocation: "sessionStorage",
         storeAuthStateInCookie: true,
         secureCookies: true,
     },
@@ -59,16 +59,6 @@ export const loginRequest = {
   */
 export const graphConfig = {
     graphMeEndpoint: "https://graph.microsoft.com/v1.0/me",
-    graphUserEndpoint: "https://graph.microsoft.com/v1.0/users/",
-    graphGroupEndpoint: "https://graph.microsoft.com/v1.0/groups/",
-    graphApplicationEndpoint: "https://graph.microsoft.com/v1.0/applications/",
-    graphServicePrincipalEndpoint: "https://graph.microsoft.com/v1.0/servicePrincipals/",
-    graphOAuth2PermissionEndpoint: "https://graph.microsoft.com/v1.0/oauth2Permissions/",
-    graphOAuth2TokenEndpoint: "https://graph.microsoft.com/v1.0/oauth2/token",
-    graphOAuth2DeviceCodeEndpoint: "https://graph.microsoft.com/v1.0/oauth2/devicecode",
-    graphOAuth2RevokeEndpoint: "https://graph.microsoft.com/v1.0/oauth2/revoke",
-    graphOAuth2IntrospectEndpoint: "https://graph.microsoft.com/v1.0/oauth2/introspect",
-
 };
 
 

@@ -32,11 +32,11 @@ export function Home() {
 
   return (
     <>
-        {/* <AuthenticatedTemplate> */}
+        <AuthenticatedTemplate>
         <MainMenu/>
-        {/* </AuthenticatedTemplate> */}
+        </AuthenticatedTemplate>
 
-      {/* <UnauthenticatedTemplate> */}
+      <UnauthenticatedTemplate>
         <Stack
           horizontal
           wrap
@@ -68,7 +68,7 @@ export function Home() {
             </DocumentCardDetails>
           </DocumentCard>
         </Stack>
-      {/* </UnauthenticatedTemplate> */}
+      </UnauthenticatedTemplate>
     </>
   );
 }

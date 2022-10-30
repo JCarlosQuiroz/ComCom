@@ -691,10 +691,10 @@ export default function NavBar() {
     >
       <CommandBar
         styles={outerCommandBarStyles}
-        // items={isAuthenticated ? _itemsAuth : _itemsNoAuth}
-        // farItems={isAuthenticated ? _farItemsAuth : undefined}
-        items={_itemsNoAuth}
-        farItems={_farItemsAuth}
+        items={isAuthenticated ? _itemsAuth : _itemsNoAuth}
+        farItems={isAuthenticated ? _farItemsAuth : undefined}
+        // items={_itemsNoAuth}
+        // farItems={_farItemsAuth}
         overflowButtonProps={overflowProps}
         // overflowItems={isAuthenticated ? overflowItemsAuth : undefined}
         primaryGroupAriaLabel="Email actions"

@@ -2,7 +2,7 @@
 "SpaProxyServer": {
 "ServerUrl": "",
 "LaunchCommand": "",
-"WorkingDirectory": "C:\\Users\\Equipo\\Documents\\Developments\\ComCom_WebAPI\\ComCom_WebAPI",
+"WorkingDirectory": "C:\\Users\\dev_carlosvq\\Documents\\GitHub\\ComCom\\ComCom_WebAPI",
 "MaxTimeoutInSeconds": "120"
 }
 }
