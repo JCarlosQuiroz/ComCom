@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { CommandBar, ICommandBarItemProps, Stack, ContextualMenuItemType, ICommandBarStyles,Separator, StackItem } from '@fluentui/react';
 import axios from 'axios';
-import { urlClientes } from '../../services/endpoints';
+
 
 
 
@@ -178,7 +178,7 @@ interface IClientListState {
 
 export class ShowFactsPendsComponent extends React.Component<{}, IClientListState> {
     async componentDidMount() {
-        const res = await axios.get(urlClientes);
+        const res = await axios.get('https://localhost:44394/api/Client');
         this.setState({ items: res.data });
         console.log(res.data);
     }

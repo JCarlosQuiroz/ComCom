@@ -2,7 +2,7 @@ import { Image,ConstrainMode, DetailsList, DetailsListLayoutMode, IColumn, IImag
 import axios from 'axios';
 import { Images, Theme } from '../../../styles/Theme'
 import * as React from 'react';
-import {  urlGetTomateSunnyFresh } from '../../../services/endpoints';
+// import {  urlGetTomateSunnyFresh } from '../../../services/endpoints';
 import { ICuartoFrioState } from '../../../models/Productos';
 
 const imageProps: Partial<IImageProps> = {
@@ -24,7 +24,7 @@ const imageProps: Partial<IImageProps> = {
 
 export class CuartoFrioTomateSunnyFresh extends React.Component<{}, ICuartoFrioState> {
     async componentDidMount() {
-        const response = await axios.get(urlGetTomateSunnyFresh);
+        const response = await axios.get('https://localhost:44394/api/GetTomateSunnyFresh');
         this.setState({ items: response.data })
         console.log(response.data);
     }

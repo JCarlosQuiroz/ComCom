@@ -17,6 +17,7 @@ import { useIsAuthenticated } from "@azure/msal-react";
 import { Theme } from "../styles/Theme";
 import SideBar from "./SideBar";
 import { PersonProfile } from "../pages/Profile";
+import { NavBarProfile } from "./NavBarProfile";
 
 
 const outerCommandBarStyles: ICommandBarStyles = {
@@ -514,7 +515,7 @@ const _farItemsAuth: ICommandBarItemProps[] = [
     },
     buttonStyles: commandBarIconButtonStyles,
     iconOnly: true,
-      commandBarButtonAs: () => <NavLink to="/"
+      commandBarButtonAs: () => <NavLink to="/navmenucustom"
       style={{
         textDecoration: "none",
         color: "inherit",
@@ -528,6 +529,35 @@ const _farItemsAuth: ICommandBarItemProps[] = [
       <IconButton
         iconProps={{
           iconName: "Download",
+          styles: commandBarIconButtonIconStyles,
+        }}
+        styles={commandBarIconButtonStyles}
+      />
+    </NavLink>,
+  },
+  {
+    key: "notifications",
+    name: "Notificaciones",
+    iconProps: {
+      iconName: "Settings",
+      styles: commandBarIconButtonIconStyles,
+    },
+    buttonStyles: commandBarIconButtonStyles,
+    iconOnly: true,
+      commandBarButtonAs: () => <NavLink to="/navmenucustom"
+      style={{
+        textDecoration: "none",
+        color: "inherit",
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <IconButton
+        iconProps={{
+          iconName: "Ringer",
           styles: commandBarIconButtonIconStyles,
         }}
         styles={commandBarIconButtonStyles}
@@ -552,7 +582,7 @@ const _farItemsAuth: ICommandBarItemProps[] = [
     onRender: () => {
       return (
         <Stack horizontal horizontalAlign="end" tokens={{ childrenGap: 20 }}>
-          <PersonProfile />
+          <NavBarProfile />
         </Stack>
       );
     },
@@ -685,9 +715,6 @@ export default function NavBar() {
       styles={outerCommandBarStyles}
       horizontalAlign="space-between"
       verticalAlign="center"
-      tokens={{
-        childrenGap: 0,
-      }}
     >
       <CommandBar
         styles={outerCommandBarStyles}

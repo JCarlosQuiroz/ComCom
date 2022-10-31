@@ -7,14 +7,14 @@ import {
   import axios from 'axios'
   import { Images, Theme } from '../../../styles/Theme'
   import * as React from 'react'
-  import { urlGetPepinoEuropeoFrello } from '../../../services/endpoints'
+  // import { urlGetPepinoEuropeoFrello } from '../../../services/endpoints'
   import { ICuartoFrioState } from '../../../models/Productos';
   
 
   export default function CuartoFrioPepinoEuropeoFrello(props: ICuartoFrioState) {
     const [productos, setProductos] = React.useState<ICuartoFrioState[]>([])
     React.useEffect(() => {
-      axios.get(urlGetPepinoEuropeoFrello).then((response) => {
+      axios.get('https://localhost:44394/api/GetPepinoSunset').then((response) => {
         setProductos(response.data)
 
       })

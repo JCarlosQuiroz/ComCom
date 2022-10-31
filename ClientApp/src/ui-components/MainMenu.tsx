@@ -1,6 +1,4 @@
 import {
-  Stack,
-  Separator,
   ImageIcon,
   IImageProps,
   DocumentCard,
@@ -9,8 +7,11 @@ import {
   DocumentCardTitle,
   IDocumentCardActivityPerson,
   IDocumentCardStyles,
+  Stack,
+  IStackStyles,
+  IStackTokens,
 } from "@fluentui/react";
-import { Images, ISepStyles, Theme } from "../styles/Theme";
+import { Images, Theme } from "../styles/Theme";
 import { useHistory } from "react-router-dom";
 
 const stylesImg: Partial<IImageProps> = {
@@ -51,184 +52,40 @@ const people: IDocumentCardActivityPerson[] = [
 
 const cardStyles: IDocumentCardStyles = {
   root: {
-    display: "inline-block",
     marginRight: 20,
     marginBottom: 20,
     width: 320,
   },
 };
-
-// function documentLinks(props: IButtonProps) {
-//   return (
-//     <NavLink
-//       to="/empaque"
-//       style={{
-//         textDecoration: "none",
-//         color: "#00a54f",
-//         fontSize: "20px",
-//         fontWeight: "300",
-//         fontStyle: "normal",
-//         textAlign: "center",
-//         display: "inline-block",
-//         marginLeft: "38px",
-//         justifyContent: "center",
-//         alignItems: "center",
-//       }}
-//       role="link"
-//     >
-//       Empaque
-//     </NavLink>
-//   );
-// }
-
+export const stackTokens: IStackTokens = { childrenGap: 15 };
+export const stackStyles: Partial<IStackStyles> = {
+    root: {
+      background: Theme.palette.neutralLighter,
+      height: "100%",
+      width: "100%",
+      overflow: "hidden",
+      maxHeight: "100vh",
+      maxWidth: "100vw",
+      // margin: '0px 0px',
+      // textAlign: 'center',
+      // color: '#605e5c',
+      selectors: {
+        p: { margin: "14px 100px" },
+        a: { color: "#0078d4" },
+        "a:hover": { textDecoration: "underline" },
+        "p:hover": { textAlign: "center" },
+      },
+    },
+  };
 export const MainMenu = () => {
   const history = useHistory();
   const navigateTo = (path: string) => {
     history.push(path);
   };
-
   return (
-    <Stack
-      horizontalAlign="center"
-      tokens={{
-        padding: "10px 0px 0px 0px",
-        childrenGap: "0%",
-        maxHeight: "100%",
-        maxWidth: "100%",
-      }}
-    >
-      <Separator theme={Theme} styles={ISepStyles}>
-        Menu Principal
-      </Separator>
-      {/* <WelcomeName/> */}
-      <Stack
-        horizontalAlign="center"
-        verticalAlign="baseline"
-        horizontal
-        wrap
-        tokens={{ padding: "0px 0px 0px 0px", childrenGap: 0 }}
-      >
-        {/* <NavLink to="/">
-          <PrimaryButton>
-            <Icon iconName="Home" />
-            Home
-          </PrimaryButton>
-        </NavLink>
-        <NavLink to="/about">
-          <PrimaryButton>
-            <Icon iconName="Info" />
-            About
-          </PrimaryButton>
-        </NavLink>
-        <NavLink to="/contact">
-          <PrimaryButton>
-            <Icon iconName="ContactInfo" />
-            Contact
-          </PrimaryButton>
-        </NavLink>
-
-        <ImageIcon
-          onClick={() => navigateTo("/dashboard")}
-          imageProps={{
-            imageFit: 1,
-            src: Images.contabilidad,
-            alt: "solutions",
-            styles: stylesImg.styles,
-            style: {
-              position: "static",
-              width: "110px",
-              height: "110px",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-              cursor: "pointer",
-            },
-          }}
-          title="Contabilidad"
-        />
-        <ImageIcon
-          imageProps={{
-            src: Images.helpdesk,
-            alt: "solutions",
-            imageFit: 1,
-            styles: stylesImg.styles,
-            style: {
-              position: "static",
-              width: "110px",
-              height: "110px",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-              cursor: "pointer",
-            },
-          }}
-          title="Soporte Tecnico"
-        />
-        <ImageIcon
-          imageProps={{
-            src: Images.recursoshumanos,
-            alt: "solutions",
-            imageFit: 1,
-            styles: stylesImg.styles,
-            style: {
-              position: "static",
-              width: "110px",
-              height: "110px",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-              cursor: "pointer",
-            },
-          }}
-          title="Recursos Humanos"
-        />
-        <ImageIcon
-          imageProps={{
-            src: Images.ventas,
-            alt: "solutions",
-            imageFit: 1,
-            styles: stylesImg.styles,
-            style: {
-              position: "static",
-              width: "110px",
-              height: "110px",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-              cursor: "pointer",
-            },
-          }}
-          title="Ventas"
-        />
-
-        <ImageIcon
-          imageProps={{
-            src: Images.metodosdepago,
-            alt: "solutions",
-            imageFit: 1,
-            styles: stylesImg.styles,
-            style: {
-              position: "static",
-              width: "110px",
-              height: "110px",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-              cursor: "pointer",
-            },
-          }}
-          title="Pagos en Linea"
-        /> */}
-      </Stack>
-
-
-      <Stack
-        horizontalAlign="center"
-        horizontal
-        wrap
-        tokens={{ padding: "0px 0px 0px 0px", childrenGap: 20 }}
-      >
-        <DocumentCard
+    
+<Stack  horizontalAlign="center" tokens={stackTokens} styles={stackStyles} >
+    <DocumentCard
           aria-label={
             "Documento Tarjeta con imagen. Cómo hacer un buen diseño." +
             "Modificado por última vez por Annie Lindqvist y otras 2 personas el 13 de marzo de 2018."
@@ -268,7 +125,6 @@ export const MainMenu = () => {
                   textAlign: "center",
                 },
               }}
-              shouldTruncate
             />
           </DocumentCardDetails>
           <DocumentCardActivity
@@ -317,7 +173,7 @@ export const MainMenu = () => {
                   textAlign: "center",
                 },
               }}
-              shouldTruncate
+
             />
           </DocumentCardDetails>
           <DocumentCardActivity
@@ -366,7 +222,6 @@ export const MainMenu = () => {
                   textAlign: "center",
                 },
               }}
-              shouldTruncate
             />
           </DocumentCardDetails>
           <DocumentCardActivity
@@ -416,7 +271,7 @@ export const MainMenu = () => {
                   textAlign: "center",
                 },
               }}
-              shouldTruncate
+              
             />
           </DocumentCardDetails>
           <DocumentCardActivity
@@ -466,7 +321,6 @@ export const MainMenu = () => {
                   textAlign: "center",
                 },
               }}
-              shouldTruncate
             />
           </DocumentCardDetails>
           <DocumentCardActivity
@@ -510,7 +364,7 @@ export const MainMenu = () => {
                   textAlign: "center",
                 },
               }}
-              shouldTruncate
+
             />
           </DocumentCardDetails>
           <DocumentCardActivity
@@ -518,19 +372,7 @@ export const MainMenu = () => {
             people={people.slice(0, 3)}
           />
         </DocumentCard>
-
-        {/* <div>
-             <Persona
-               imageUrl={Images.profileUser}
-               imageInitials=""
-               text=""
-               size={PersonaSize.size40}
-               hidePersonaDetails={false}
-               presence={1}
-             />
-         </div> */}
-      </Stack>
-    </Stack>
+        </Stack>
   );
 };
-export default MainMenu;
+

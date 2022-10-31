@@ -2,7 +2,7 @@ import {  DetailsList,  IColumn, Stack,Image } from '@fluentui/react';
 import axios from 'axios';
 import { Images, Theme } from '../../../styles/Theme'
 import * as React from 'react';
-import { urlGetPepinoFrello } from '../../../services/endpoints';
+// import { urlGetPepinoFrello } from '../../../services/endpoints';
 import { ICuartoFrioState } from '../../../models/Productos';
 
 //const imageProps: Partial<IImageProps> = {
@@ -26,7 +26,7 @@ import { ICuartoFrioState } from '../../../models/Productos';
     const [productos, setProductos] = React.useState<ICuartoFrioState[]>([])
 
     React.useEffect(() => {
-      axios.get(urlGetPepinoFrello).then((response) => {
+      axios.get('https://localhost:44394/api/GetPepinoSunset').then((response) => {
         setProductos(response.data)
         console.log(response.data)
       })

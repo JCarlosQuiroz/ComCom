@@ -11,7 +11,7 @@ import {
 import axios from 'axios'
 import { Images, Theme } from '../../../styles/Theme'
 import * as React from 'react'
-import { urlGetPepinoPureFlavor } from '../../../services/endpoints'
+// import { urlGetPepinoPureFlavor } from '../../../services/endpoints'
 import { ICuartoFrioState } from '../../../models/Productos';
 
       
@@ -38,7 +38,7 @@ export class CuartoFrioPepinoPureFlavor extends React.Component<
   ICuartoFrioState
 > {
   async componentDidMount() {
-    const response = await axios.get(urlGetPepinoPureFlavor)
+    const response = await axios.get('https://localhost:44394/api/GetPepinoPureFlavor');
     this.setState({ items: response.data })
     console.log(response.data)
   }

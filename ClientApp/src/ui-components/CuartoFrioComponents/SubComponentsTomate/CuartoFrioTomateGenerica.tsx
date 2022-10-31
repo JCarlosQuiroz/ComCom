@@ -2,7 +2,7 @@ import { ConstrainMode, DetailsList, DetailsListLayoutMode, IColumn, IImageProps
 import axios from 'axios';
 import { Images, Theme } from '../../../styles/Theme'
 import * as React from 'react';
-import {  urlGetTomateGenerica } from '../../../services/endpoints';
+// import {  urlGetTomateGenerica } from '../../../services/endpoints';
 import { ICuartoFrioState } from '../../../models/Productos';
 
 const imageProps: Partial<IImageProps> = {
@@ -24,7 +24,7 @@ const imageProps: Partial<IImageProps> = {
 
 export class CuartoFrioTomateGenerica extends React.Component<{}, ICuartoFrioState> {
     async componentDidMount() {
-        const response = await axios.get(urlGetTomateGenerica);
+        const response = await axios.get('https://localhost:44394/api/GetTomateGenerica');
         this.setState({ items: response.data })
         console.log(response.data);
     }

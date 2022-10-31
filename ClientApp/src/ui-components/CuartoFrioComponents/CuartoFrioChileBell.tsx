@@ -11,7 +11,7 @@ import axios from 'axios'
 
 import * as React from 'react'
 import { ICuartoFrioState } from '../../models/Productos'
-import { getTest } from '../../services/endpoints'
+// import { getTest } from '../../services/endpoints'
 
 
 const innerCommandBarStyles: ICommandBarStyles = {
@@ -173,7 +173,7 @@ export default function CuartoFrioChileBell(): JSX.Element {
   const [productos, setProductos] = React.useState<ICuartoFrioState[]>([])
 
   React.useEffect(() => {
-    axios.get(getTest).then((response) => {
+    axios.get('https://localhost:44394/api/GetPepinoSunset').then((response) => {
       setProductos(response.data)
       console.log(response.data)
     })

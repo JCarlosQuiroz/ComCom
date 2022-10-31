@@ -13,10 +13,13 @@ import {
 } from "@fluentui/react";
 
 import { Images } from "../styles/Theme";
+import WelcomeName from "../ui-components/CustomTestComponents/WelcomeName";
 
-import MainMenu from "../ui-components/MainMenu";
+
+// import MainMenu from "../ui-components/MainMenu";
 import { SignInButton } from "../ui-components/UtilityComponents/SignInButton";
 import { SignOutButton } from "../ui-components/UtilityComponents/SignOutButton";
+import MenuSolution from "./MenuSolutions";
 
 export function Home() {
   const isAuthenticated = useIsAuthenticated();
@@ -33,7 +36,9 @@ export function Home() {
   return (
     <>
         <AuthenticatedTemplate>
-        <MainMenu/>
+          <WelcomeName/>
+          <MenuSolution/>
+        {/* <MainMenu/> */}
         </AuthenticatedTemplate>
 
       <UnauthenticatedTemplate>

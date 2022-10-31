@@ -7,13 +7,13 @@ import {
 import axios from 'axios'
 import { Images, Theme } from '../../../styles/Theme'
 import * as React from 'react'
-import { urlGetPepinoSunnyFresh } from '../../../services/endpoints'
+// import { urlGetPepinoSunnyFresh } from '../../../services/endpoints'
 import { ICuartoFrioState } from '../../../models/Productos'
 
 export default function CuartoFrioPepinoSunnyFresh (props: ICuartoFrioState) {
   const [productos, setProductos] = React.useState<ICuartoFrioState[]>([])
   React.useEffect(() => {
-    axios.get(urlGetPepinoSunnyFresh).then((response) => {
+    axios.get('https://localhost:44394/api/GetPepinoSunset').then((response) => {
       setProductos(response.data)
       console.log(response.data)
 

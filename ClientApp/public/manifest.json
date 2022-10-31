@@ -101,6 +101,26 @@
 	"passwordCredentials": [
 		{
 			"customKeyIdentifier": null,
+			"endDate": "2024-06-22T17:03:25.160093Z",
+			"keyId": "ece03696-ff3f-410d-b963-868c6e2f7ade",
+			"startDate": "2022-06-22T17:03:25.160093Z",
+			"value": null,
+			"createdOn": "2022-06-22T17:03:25.2538414Z",
+			"hint": "r8n",
+			"displayName": "Secret created by dotnet-msidentity tool"
+		},
+		{
+			"customKeyIdentifier": null,
+			"endDate": "2024-06-19T18:24:52.0270857Z",
+			"keyId": "05b82bbb-86d9-49e1-abd3-7e464dec3b8a",
+			"startDate": "2022-06-19T18:24:52.0270857Z",
+			"value": null,
+			"createdOn": "2022-06-19T18:24:52.0895933Z",
+			"hint": "5yk",
+			"displayName": "Secret created by dotnet-msidentity tool"
+		},
+		{
+			"customKeyIdentifier": null,
 			"endDate": "2024-06-16T15:06:44.8623651Z",
 			"keyId": "fa636bbe-1336-4525-801a-26dfb9cb6d2d",
 			"startDate": "2022-06-16T15:06:44.8623651Z",
@@ -121,31 +141,63 @@
 	"publisherDomain": "comcomindustries.onmicrosoft.com",
 	"replyUrlsWithType": [
 		{
+			"url": "http://localhost:5235/signin-oidc",
+			"type": "Web"
+		},
+		{
+			"url": "https://localhost:7235/signin-oidc",
+			"type": "Web"
+		},
+		{
+			"url": "https://localhost:44377/signin-oidc",
+			"type": "Web"
+		},
+		{
+			"url": "http://localhost:51717/signin-oidc",
+			"type": "Web"
+		},
+		{
+			"url": "http://localhost:23601/signin-oidc",
+			"type": "Web"
+		},
+		{
+			"url": "http://localhost:27886/signin-oidc",
+			"type": "Web"
+		},
+		{
+			"url": "http://localhost:5104/signin-oidc",
+			"type": "Web"
+		},
+		{
+			"url": "http://localhost:5124/signin-oidc",
+			"type": "Web"
+		},
+		{
+			"url": "https://comcombusinessapp.comcomindustries.onmicrosoft.com/signin-oidc",
+			"type": "Web"
+		},
+		{
+			"url": "https://localhost:44441/signin-oidc",
+			"type": "Web"
+		},
+		{
 			"url": "https://localhost:7104/signin-oidc",
+			"type": "Web"
+		},
+		{
+			"url": "https://localhost:7124/signin-oidc",
+			"type": "Web"
+		},
+		{
+			"url": "https://localhost:44441//signin-oidc",
 			"type": "Spa"
 		},
 		{
-			"url": "https://localhost:44434/signin-oidc",
-			"type": "Spa"
-		},
-		{
-			"url": "https://localhost:44334/signin-oidc",
+			"url": "https://localhost:44441/",
 			"type": "Spa"
 		},
 		{
 			"url": "https://comcombusinessapp.comcomindustries.onmicrosoft.com/",
-			"type": "Spa"
-		},
-		{
-			"url": "http://localhost:5104/signin-oidc",
-			"type": "Spa"
-		},
-		{
-			"url": "http://localhost:23601/signin-oidc",
-			"type": "Spa"
-		},
-		{
-			"url": "https://localhost:44434/",
 			"type": "Spa"
 		}
 	],

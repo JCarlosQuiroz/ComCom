@@ -2,14 +2,14 @@ import { Image,DetailsList, IColumn, Stack } from '@fluentui/react';
 import axios from 'axios';
 import { Images, Theme } from '../../../styles/Theme'
 import * as React from 'react';
-import {  urlGetChileBellSunnyFresh } from '../../../services/endpoints';
+// import {  urlGetChileBellSunnyFresh } from '../../../services/endpoints';
 import { ICuartoFrioState } from '../../../models/Productos';
 
 
   export default function CuartoFrioChileBellSunnyFresh(_props: ICuartoFrioState) {
     const [productos, setProductos] = React.useState<ICuartoFrioState[]>([])
     React.useEffect(() => {
-      axios.get(urlGetChileBellSunnyFresh).then((response) => {
+      axios.get('https://localhost:44394/api/GetPepinoSunset').then((response) => {
         setProductos(response.data)
       })
     }, [])

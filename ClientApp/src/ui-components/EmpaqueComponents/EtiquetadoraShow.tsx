@@ -11,7 +11,7 @@ import {
 import { DocumentCard, DocumentCardDetails, DocumentCardImage, DocumentCardTitle, IDocumentCardStyles, ImageFit, Stack, StackItem } from '@fluentui/react';
 import axios from 'axios';
 import grecos from '../../assets/img/logos/grecoLogo.png';
-import { urlRprtPalletsDets } from '../../services/endpoints';
+// import { urlRprtPalletsDets } from '../../services/endpoints';
 
 
 
@@ -36,7 +36,7 @@ export interface IEmpaqueState{
 
 export class EtiquetadoraShow extends React.Component<{}, IEmpaqueState> {
   async componentDidMount(){
-    const res = await axios.get(urlRprtPalletsDets);
+    const res = await axios.get('https://localhost:44394/api/Empaque');
     this.setState({items: res.data});
     console.log(res.data);
   }

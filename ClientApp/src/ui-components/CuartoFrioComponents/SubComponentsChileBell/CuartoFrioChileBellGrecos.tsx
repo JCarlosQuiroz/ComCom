@@ -8,7 +8,7 @@ import axios from 'axios'
 import * as React from 'react'
 
 import { ICuartoFrioState } from '../../../models/Productos';
-import { urlGetChileBellGrecos } from '../../../services/endpoints';
+// import { urlGetChileBellGrecos } from '../../../services/endpoints';
 
 
 export default function CuartoFrioChileBellGrecos(_props: ICuartoFrioState) {
@@ -16,7 +16,7 @@ export default function CuartoFrioChileBellGrecos(_props: ICuartoFrioState) {
   // const [total, setTotal] = React.useState(0)
   // const [loading, setLoading] = React.useState(false)
   React.useEffect(() => {
-    axios.get(urlGetChileBellGrecos).then((response) => {
+    axios.get('https://localhost:44394/api/GetPepinoSunset').then((response) => {
       setProductos(response.data)
       console.log(response.data)
     })

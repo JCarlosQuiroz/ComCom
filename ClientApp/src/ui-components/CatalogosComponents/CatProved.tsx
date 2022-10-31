@@ -5,7 +5,7 @@ import {
 } from '@fluentui/react';
 import axios from 'axios';
 import { Theme } from '../../styles/Theme';
-import { urlCatProved } from '../../services/endpoints';
+// import { urlCatProved } from '../../services/endpoints';
 
 
 const theme = Theme;
@@ -207,7 +207,7 @@ interface ICatProvedState {
 export class CatProved extends React.Component<{}, ICatProvedState> {
 
   async componentDidMount() {
-    const res = await axios.get(urlCatProved);
+    const res = await axios.get('https://localhost:44394/api/GetPepinoSunset');
     this.setState({ items: res.data });
     console.log(res.data);
   }

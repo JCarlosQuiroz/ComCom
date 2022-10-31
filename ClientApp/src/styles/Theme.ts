@@ -61,7 +61,18 @@ import comcomlogo7 from '../assets/img/icons/10-  dispositivo movil.svg';
 import comcomlogo8 from '../assets/img/icons/business.svg';
 import comcomlogo9 from '../assets/img/icons/logo_blanco.svg';
 import comcomlogo10 from '../assets/img/icons/excel_20x1.svg';
-
+import navbarLogo from '../assets/img/icons/logo.svg';
+import outlookLogo from '../assets/img/icons/outlook_20x1.svg';
+import excelLogo from '../assets/img/icons/excel_20x1.svg';
+import powerBiLogo from '../assets/img/icons/powerbi_20x1.svg';
+import powerPointLogo from '../assets/img/icons/powerpoint_20x1.svg';
+import wordLogo from '../assets/img/icons/word_20x1.svg';
+import sharePointLogo from '../assets/img/icons/sharepoint_20x1.svg';
+import teamsLogo from '../assets/img/icons/teams_20x1.svg';
+import onedriveLogo from '../assets/img/icons/onedrive_20x1.svg';
+import onenoteLogo from '../assets/img/icons/onenote_20x1.svg';
+import todoLogo from '../assets/img/icons/todo_20x1.svg';
+import reportsLogo from '../assets/img/icons/reports_20x1.svg';
 export const Theme = createTheme({
     palette: {
         themePrimary: '#f15a32',
@@ -107,6 +118,18 @@ export const Theme = createTheme({
       }
 
 export const Images = {
+  todoLogo,
+  onenoteLogo,
+  onedriveLogo,
+  powerBiLogo,
+  teamsLogo,
+  excelLogo,
+  outlookLogo,
+  wordLogo,
+  powerPointLogo,
+  sharePointLogo,
+  reportsLogo,
+  navbarLogo,
     solutionslogo,
     azureActiveDirectory,
     azureActiveDirectoryB2C,

@@ -5,7 +5,7 @@ import { mergeStyles, MarqueeSelection,DetailsList, DetailsListLayoutMode, Selec
 import axios from 'axios';
 
 import { AddClients } from './AddClients';
-import { urlClientes } from '../../services/endpoints';
+// import { urlClientes } from '../../services/endpoints';
 
 
 
@@ -80,7 +80,7 @@ export interface IClientListState {
 export class ShowClients extends React.Component<{}, IClientListState> {
   
 async componentDidMount(){
-  const res = await axios.get(urlClientes);
+  const res = await axios.get('https://localhost:44394/api/GetPepinoSunset');
   this.setState({items: res.data});
   console.log(res.data);
 }

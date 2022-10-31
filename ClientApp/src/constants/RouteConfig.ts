@@ -9,7 +9,7 @@ import ShowClients from "../ui-components/ClientListComponents/ShowClients";
 import CuartoFrioMain from "../ui-components/CuartoFrioComponents/CuartoFrioMain";
 import Counter from "../ui-components/CustomTestComponents/Counter";
 import Custom01 from "../ui-components/CustomTestComponents/Custom01";
-import FetchData from "../ui-components/CustomTestComponents/FetchData";
+// import FetchData from "../ui-components/CustomTestComponents/FetchData";
 import MyFiles from "../ui-components/CustomTestComponents/MyFiles";
 import UserRequire from "../ui-components/CustomTestComponents/UserRequire";
 import { EmpaqueMain } from "../ui-components/EmpaqueComponents/EmpaqueMain";
@@ -31,7 +31,10 @@ import { SystemPaysView } from "../ui-components/RapPaysComponents/SystemPays";
 import Dashboard from "../pages/Dashboard";
 import Users from "../pages/Users";
 import { Home } from "../pages/Home";
-import MainMenu from "../ui-components/MainMenu";
+// import MainMenu from "../ui-components/MainMenu";
+import NavMenuCustom from "../ui-components/CustomTestComponents/NavMenuCustom";
+import { MainMenu } from "../ui-components/MainMenu";
+import { FetchData } from "../ui-components/CustomTestComponents/FetchData";
 
 const routes = [
     { path: "/users", component: Users},
@@ -62,6 +65,7 @@ const routes = [
     { path : "/pays", component:  SystemPaysView},
     { path : "/oxxo", component: OxxoPaysComponent },
     { path : "/mainmenu", component: MainMenu },
+    { path : "/navmenucustom", component: NavMenuCustom },
     // { path : "/", component:  },
     // { path : "/", component:  },
     // { path : "/", component:  },

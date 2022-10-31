@@ -12,7 +12,7 @@ import ShowClients from "../ui-components/ClientListComponents/ShowClients";
 import CuartoFrioMain from "../ui-components/CuartoFrioComponents/CuartoFrioMain";
 import Counter from "../ui-components/CustomTestComponents/Counter";
 import Custom01 from "../ui-components/CustomTestComponents/Custom01";
-import FetchData from "../ui-components/CustomTestComponents/FetchData";
+// import FetchData from "../ui-components/CustomTestComponents/FetchData";
 import MyFiles from "../ui-components/CustomTestComponents/MyFiles";
 import UserRequire from "../ui-components/CustomTestComponents/UserRequire";
 import { EmpaqueMain } from "../ui-components/EmpaqueComponents/EmpaqueMain";
@@ -33,7 +33,10 @@ import { SystemPaysView } from "../ui-components/RapPaysComponents/SystemPays";
 
 import Dashboard from "../pages/Dashboard";
 import Users from "../pages/Users";
-import MainMenu from "../ui-components/MainMenu";
+// import MainMenu from "../ui-components/MainMenu";
+import NavMenuCustom from "../ui-components/CustomTestComponents/NavMenuCustom";
+import { MainMenu } from "../ui-components/MainMenu";
+import { FetchData } from "../ui-components/CustomTestComponents/FetchData";
 // import { Home } from "../pages/Home";
 // import MainMenu from "../ui-components/MainMenu";
 
@@ -46,6 +49,21 @@ const routes = [
     { path : "/empaque", component : EmpaqueMain },
     { path : "/counter", component: Counter },
     { path : "/onedrive", component: MyFiles },
+    { path : "/custom01", component: Custom01 },
+    { path : "/userrequire", component: UserRequire },
+    { path : "/contabilidad", component: Contabilidad },
+    { path : "/cardssection", component: CardsSection },
+    { path : "/clients", component: Clients },
+    { path : "/activegroups", component: ActiveGroupsView },
+    { path : "/progressindicator", component: ProgressIndicator },
+    { path : "/useravatar", component: UserAvatar },
+    { path : "/welcomename", component: WelcomeName },
+    { path : "/zerodriveui", component: ZeroDriveUI },
+    { path : "/showfactspends", component: ShowFactsPendsComponent },
+    { path : "/oxxopays", component: OxxoPaysComponent },
+    { path : "/systempays", component: SystemPaysView },
+    { path : "/cuartofrio", component: CuartoFrioMain },
+    { path : "/catalmacenes", component: CatAlmacenes },
     { path : "/catproved", component: CatProved },
     { path : "/catalmacenes", component: CatAlmacenes },
     { path : "/cuartofrio", component: CuartoFrioMain },
@@ -66,6 +84,7 @@ const routes = [
     { path : "/pays", component:  SystemPaysView},
     { path : "/oxxo", component: OxxoPaysComponent },
     { path : "/mainmenu", component: MainMenu },
+    { path : "/navmenucustom", component: NavMenuCustom },
     // { path : "/", component:  },
     // { path : "/", component:  },
     // { path : "/", component:  },

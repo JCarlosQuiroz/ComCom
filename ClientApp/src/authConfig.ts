@@ -40,12 +40,18 @@ export const msalConfig: Configuration = {
                         return;
                 }
             },
-            piiLoggingEnabled: false,
+            piiLoggingEnabled: true,
         },
         windowHashTimeout: 60000,
         iframeHashTimeout: 60000,
         loadFrameTimeout: 0,
     },
+};
+
+// The current application coordinates were pre-registered in a B2C tenant.
+export const apiConfig = {
+    b2cScopes: ["https://contoso.onmicrosoft.com/tasks/tasks.read"],
+    webApi: "https://localhost:7235/"
 };
 
 // Add here scopes for id token to be used at MS Identity Platform endpoints.

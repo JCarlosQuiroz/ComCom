@@ -11,7 +11,7 @@ import {
 import axios from 'axios'
 import { Images, Theme } from '../../../styles/Theme'
 import * as React from 'react'
-import { urlGetTomateGrecos } from '../../../services/endpoints'
+// import { urlGetTomateGrecos } from '../../../services/endpoints'
 import { ICuartoFrioState } from '../../../models/Productos';
 
 const imageProps: Partial<IImageProps> = {
@@ -66,7 +66,7 @@ export class CuartoFrioTomateGrecos extends React.Component<
   ICuartoFrioState
 > {
   async componentDidMount() {
-    const response = await axios.get(urlGetTomateGrecos)
+    const response = await axios.get('https://localhost:44394/api/GetTomateGrecos');
     this.setState({ items: response.data })
     console.log(response.data)
   }

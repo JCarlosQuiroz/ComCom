@@ -20,13 +20,17 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 
 builder.Services.AddDbContext<radius_db>(options =>
-         options.UseMySql("server=localhost;database=database_radius;username=root;password=Temporal9713@", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.4.24-mariadb")));
+         options.UseMySql("server=localhost;database=Radius;username=root;password=", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.4.24-mariadb")));
 
 builder.Services.AddDbContext<ValeAmigo>(options =>
          options.UseMySql("server=localhost;database=valeamigo;username=root;password=", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.4.24-mariadb")));
 
 builder.Services.AddDbContext<databasecomCom>(options =>
          options.UseNpgsql(builder.Configuration.GetConnectionString("ServicesDataPostgresql")));
+
+
+//builder.Services.AddDbContext<databaseR0>(options =>
+//         options.UseSqlServer(builder.Configuration.GetConnectionString("ServiceDataMSSQL")));
 
 builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
                  options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore).AddNewtonsoftJson(options =>
@@ -49,6 +53,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -57,6 +62,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors();
 
 app.UseAuthentication();
 app.UseAuthorization();

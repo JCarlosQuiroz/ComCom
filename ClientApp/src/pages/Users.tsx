@@ -16,7 +16,7 @@ import {
 } from "@fluentui/react";
 import axios from "axios";
 import { IUsers, userColumns, _navItems } from "../models/Users";
-import {userSecurity } from "../services/endpoints";
+// import {userSecurity } from "../services/endpoints";
 
 
 
@@ -101,7 +101,7 @@ export default function CatProved() {
 
   React.useEffect(() => {
     axios
-      .get(userSecurity)
+      .get('https://localhost:44394/api/GetPepinoSunset')
       .then((response) => {
         setUsers(response.data);
 

@@ -1,82 +1,126 @@
-import * as React from 'react';
-import { urlWeatherforecast } from '../../services/endpoints';
+import { InteractionRequiredAuthError, InteractionStatus } from "@azure/msal-browser";
+import { useMsal } from "@azure/msal-react";
+import axios, { AxiosResponse } from "axios";
+import { useState, useEffect } from "react";
+import { loginRequest } from "../../authConfig";
+import { urlWeatherforecast } from "../../models/responses/Endpoints";
+import { callMsGraph } from "../../models/responses/MsGraphApiCall";
+import { WeatherForecast } from "../../modules/core/domain/models/WeatherForecast";
+// import { Weatherforecast } from "../../modules/core/domain/models/WeatherForecast";
 
 
-export interface IFetchData {
-    date: string;
-    temperatureC: string;
-    temperatureF: string;
-    summary: string;
 
-}
-export interface IFetchDataState {
-    items: IFetchData[];
-    loading: boolean;
-}
+export function FetchData() {
+  const { instance, inProgress } = useMsal();
+    const [forecastData, setForecastData] = useState<WeatherForecast[]>([]);
+    const [loading, setLoading] = useState(true);
+ 
+    useEffect(() => {
+      if (!forecastData && inProgress === InteractionStatus.None) {
+        callMsGraph() 
+          .then((response) => setForecastData(response))
+          .catch(async (e) => {
+            if (e instanceof InteractionRequiredAuthError) {
+             await instance.acquireTokenRedirect({
+                ...loginRequest,
+                account: instance.getAllAccounts()[0],
+              });
+            }
+          });
+      }
+    }, [inProgress, forecastData, instance]);
 
-export class FetchData extends React.Component<{}, IFetchDataState> {
-    static displayName = FetchData.name;
+    useEffect(() => {
+      if (forecastData) {
+        setLoading(false);
+      }
+    }, [forecastData]);
 
-    private _allItems: IFetchData[];
+    // useEffect(() => {
+    //   const fetchData = async () => {
+    //     const result = await instance.acquireTokenSilent({
+    //       ...loginRequest,
+    //       account: instance.getAllAccounts()[0],
+    //     });
+    //     const headers = new Headers();
+    //     const bearer = `Bearer ${result.accessToken}`;
+    //     headers.append("Authorization", bearer);
+    //     const options = {
+    //       method: "GET",
+    //       headers: headers,
+    //     };
+    //     const response = await fetch(urlWeatherforecast, options);
+    //     const data = await response.json();
+    //     const weatherForecast = data as WeatherForecast[];
+    //     setForecastData(weatherForecast);
+    //   };
+    //   fetchData();
+    // }, [instance]);
 
-    constructor(props: {}) {
-        super(props);
-        this._allItems = [];
-        this.state = {
-            items: this._allItems,
-            loading: true
-        };
+    useEffect(() => {
+      axios.get(urlWeatherforecast).then((response: AxiosResponse<WeatherForecast[]>) => {
+        setForecastData(response.data);
+      });
+    }, []);
 
-  }
+    useEffect(() => {
+      axios.get("https://localhost:7235/api/Clients/nas").then((resp) => {
+        console.log(resp);
+      });
+    }, []);
+    
 
-  componentDidMount() {
-    this.populateWeatherData();
-  }
-
-  static renderForecastsTable(items: IFetchData[]) {
-    return (
-      
-      <table className='ms-table' aria-labelledby="tabelLabel">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Temp. (C)</th>
-            <th>Temp. (F)</th>
-            <th>Summary</th>
-          </tr>
-        </thead>
-        <tbody>
-                {items.map(forecast =>
-            <tr key={forecast.date}>
-              <td>{forecast.date}</td>
-              <td>{forecast.temperatureC}</td>
-              <td>{forecast.temperatureF}</td>
-              <td>{forecast.summary}</td>
-            </tr>
-          )}
-        </tbody>
-      </table>
-    );
-  }
-
-  render() {
-    let contents = this.state.loading
-      ? <p><em>Loading...</em></p>
-      : FetchData.renderForecastsTable(this.state.items);
+    useEffect(() => {
+      const fetchData = async () => {
+        const result = await instance.acquireTokenSilent({
+          ...loginRequest,
+          account: instance.getAllAccounts()[0],
+        });
+        // console.log("result", result)
+        axios.get(urlWeatherforecast, {
+          headers: {
+            Authorization: `Bearer ${result.accessToken}`,
+            contentType: "application/json",
+          },
+        }).then((response: AxiosResponse<WeatherForecast[]>) => {
+          setForecastData(response.data);
+          });
+      };
+      fetchData();
+    }, [instance]);
+    
 
     return (
       <div>
-        <h1 id="tabelLabel" >Weather forecast</h1>
+        <h1 id="tabelLabel">Weather forecast</h1>
         <p>This component demonstrates fetching data from the server.</p>
-        {contents}
+        {loading ? (
+          <p>
+            <em>Loading...</em>
+          </p>
+        ) : (
+          <table className="table table-striped" aria-labelledby="tabelLabel">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Temp. (C)</th>
+                <th>Temp. (F)</th>
+                <th>Summary</th>
+              </tr>
+            </thead>
+            <tbody>
+              {forecastData.map((forecast) => (
+                <tr key={forecast.date}>
+                  <td>{forecast.date}</td>
+                  <td>{forecast.temperatureC}</td>
+                  <td>{forecast.temperatureF}</td>
+                  <td>{forecast.summary}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
     );
-  }
-
-  async populateWeatherData() {
-    const response = await fetch(urlWeatherforecast);
-    const data = await response.json();
-    this.setState({ items: data, loading: false });
-  }
 }
-export default FetchData;
+
