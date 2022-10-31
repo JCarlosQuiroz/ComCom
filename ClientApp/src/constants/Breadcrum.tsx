@@ -1,4 +1,5 @@
 import { IBreadcrumbItem, Icon, IDividerAsProps, ILabelStyles, TooltipHost } from "@fluentui/react";
+import { useHistory } from "react-router-dom";
 
 
 export const labelStyles: Partial<ILabelStyles> = {
@@ -14,10 +15,17 @@ export const labelStyles: Partial<ILabelStyles> = {
     { text: 'Folder 5', key: 'f5', href: '#/controls/web/breadcrumb', isCurrentItem: true },
   ];
   export const itemsWithHeading: IBreadcrumbItem[] = [
-    { text: 'Utilidades y Servicios', key: 'Utilidades', href: '/MenuSolution' },
+    { text: 'Utilidades y Servicios', key: 'Utilidades', onClick: (ev?: React.MouseEvent<HTMLElement>, item?: IBreadcrumbItem) => Navigate()('/MenuSolution') },
     { text: 'Contador', key: 'Counter', isCurrentItem: true },
     
   ];
+
+  function Navigate() {
+    const history = useHistory();
+    const navigateTo = (path: string) => history.push(path);
+    return navigateTo;
+  }
+
   export function _onBreadcrumbItemClicked(ev: React.MouseEvent<HTMLElement>, item: IBreadcrumbItem): void {
     console.log(`Breadcrumb item with key "${item.key}" has been clicked.`);
   }

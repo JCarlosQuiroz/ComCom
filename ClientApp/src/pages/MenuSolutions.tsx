@@ -10,43 +10,17 @@ import {
     DocumentCardTitle,
     IDocumentCardTitleStyles,
   } from "@fluentui/react";
+import { useHistory } from "react-router-dom";
 import { Images, Theme } from "../styles/Theme";
 
 
 
   export default function MenuSolution(props: any) {
-    // const icondocImgStyles: IDocumentCardImageProps = {
-    //     imageFit: ImageFit.centerContain,
-    //     width: 100,
-    //     height: 100,
-    //     styles: {
-    //         root: {
-    //             overflow: 'hidden',
-    //             backgroundColor: '#ffffff00',
-    //             color: '#ffffff00',
-    //         }
-    //     }
-    //// };
-    //const stylesf: IDocumentCardTitleStyles = {
-    //  root: {},
-    //}
-
-    const ISepStyles: ISeparatorStyles = {
-      root: {
-        backgroundColor: Theme.palette.themePrimary,
-        height: 2,
-        width: "100%",
-        marginTop: 20,
-        marginBottom: 40,
-      },
-      content: {
-        fontSize: "26px",
-        fontWeight: "400",
-        fontStyle: "normal",
-        color: Theme.palette.neutralPrimary,
-        bottom: 28,
-      },
+    const history = useHistory();
+    const navigateTo = (path: string) => {
+      history.push(path);
     };
+
     const cardStyles: IDocumentCardStyles = {
       root: {
         display: "inline-block",
@@ -107,127 +81,33 @@ import { Images, Theme } from "../styles/Theme";
           wrap
           tokens={{ padding: "0px 0px 0px 0px", childrenGap: 0 }}
         >
-          {/* <DocumentCard styles={cardStyles} onClickHref="/catalmacenes">
-            <DocumentCardImage
-              height={80}
-              imageFit={1}
-              iconProps={{
-                iconName: "ProductCatalog",
-                styles: {
-                  root: {
-                    color: Theme.palette.themePrimary,
-                    fontSize: "80px",
-                    width: "auto",
-                    height: "auto",
-                  },
-                },
-              }}
-            />
-            <DocumentCardDetails />
-            <DocumentCardTitle
-              styles={stylesf}
-              title="Catalogo Almacenes"
-              shouldTruncate
-            />
-          </DocumentCard> */}
-
-          {/* <DocumentCard styles={cardStyles} onClickHref="/CatProved">
-            <DocumentCardImage
-              height={80}
-              imageFit={1}
-              iconProps={{
-                iconName: "TextDocumentShared",
-                styles: {
-                  root: {
-                    color: Theme.palette.themePrimary,
-                    fontSize: "80px",
-                    width: "auto",
-                    height: "auto",
-                  },
-                },
-              }}
-            />
-            <DocumentCardDetails />
-            <DocumentCardTitle
-              styles={stylesf}
-              title="Catalogo Proveedores"
-              shouldTruncate
-            />
-          </DocumentCard> */}
-
-          {/* <DocumentCard styles={cardStyles} onClickHref="/Counter">
-            <DocumentCardImage
-              height={80}
-              imageFit={1}
-              iconProps={{
-                iconName: "CPlusPlus",
-                styles: {
-                  root: {
-                    color: Theme.palette.themePrimary,
-                    fontSize: "80px",
-                    width: "auto",
-                    height: "auto",
-                  },
-                },
-              }}
-            />
-            <DocumentCardDetails />
-            <DocumentCardTitle styles={stylesf} title="Contador" shouldTruncate />
-          </DocumentCard> */}
-
-          {/* <DocumentCard styles={cardStyles} onClickHref="/Custom01">
-            <DocumentCardImage
-              height={80}
-              imageFit={1}
-              iconProps={{
-                iconName: "Quantity",
-                styles: {
-                  root: {
-                    color: Theme.palette.themePrimary,
-                    fontSize: "80px",
-                    width: "auto",
-                    height: "auto",
-                  },
-                },
-              }}
-            />
-            <DocumentCardDetails />
-            <DocumentCardTitle
-              styles={stylesf}
-              title="Custom 01"
-              shouldTruncate
-            />
-          </DocumentCard> */}
-
-          {/* <DocumentCard styles={cardStyles} onClickHref="/FetchData">
-            <DocumentCardImage
-              height={80}
-              imageFit={1}
-              iconProps={{
-                iconName: "Cloudy",
-                styles: {
-                  root: {
-                    color: Theme.palette.themePrimary,
-                    fontSize: "80px",
-                    width: "auto",
-                    height: "auto",
-                  },
-                },
-              }}
-            />
-            <DocumentCardDetails />
-            <DocumentCardTitle
-              styles={stylesf}
-              title="Pronostico del tiempo"
-              shouldTruncate
-            />
-          </DocumentCard> */}
-
-          <DocumentCard styles={cardStyles} onClickHref="/MyFiles">
+  
+          <DocumentCard styles={cardStyles}
+            onClick={() => navigateTo("/reportes")}
+          >
             <DocumentCardImage
               height={65}
               imageFit={1}
               imageSrc={Images.reportsLogo}
+            />
+            <DocumentCardDetails />
+            <DocumentCardTitle
+              styles={stylesf}
+              title="Reportes"
+              shouldTruncate
+            />
+          </DocumentCard>
+
+
+
+
+          <DocumentCard styles={cardStyles} 
+            onClick={() => navigateTo("/forecast")}
+          >
+            <DocumentCardImage
+              height={65}
+              imageFit={1}
+              imageSrc={Images.comcomlogo3}
               // iconProps={{
               //   iconName: "OneDriveFolder16",
               //   styles: {
@@ -243,32 +123,13 @@ import { Images, Theme } from "../styles/Theme";
             <DocumentCardDetails />
             <DocumentCardTitle
               styles={stylesf}
-              title="Reportes"
+              title="Forecast"
               shouldTruncate
             />
           </DocumentCard>
-
-          {/* <DocumentCard styles={cardStyles} onClickHref="/Loading">
-            <DocumentCardImage
-              height={80}
-              imageFit={1}
-              iconProps={{
-                iconName: "ProgressLoopOuter",
-                styles: {
-                  root: {
-                    color: Theme.palette.themePrimary,
-                    fontSize: "80px",
-                    width: "auto",
-                    height: "auto",
-                  },
-                },
-              }}
-            />
-            <DocumentCardDetails />
-            <DocumentCardTitle styles={stylesf} title="Loading" shouldTruncate />
-          </DocumentCard> */}
-
-          <DocumentCard styles={cardStyles} onClickHref="/onedrive">
+          <DocumentCard styles={cardStyles} 
+            onClick={() => navigateTo("/onedrive")}
+          >
             <DocumentCardImage
               height={65}
               imageFit={1}
@@ -293,7 +154,9 @@ import { Images, Theme } from "../styles/Theme";
             />
           </DocumentCard>
 
-          <DocumentCard styles={cardStyles} onClickHref="/MyFiles">
+          <DocumentCard styles={cardStyles} 
+            onClick={() => navigateTo("/custom")}
+          >
             <DocumentCardImage
               height={65}
               imageFit={1}
@@ -420,7 +283,7 @@ import { Images, Theme } from "../styles/Theme";
             />
           </DocumentCard>
 
-          <DocumentCard styles={cardStyles} onClickHref="/MyFiles">
+          <DocumentCard styles={cardStyles} onClick={() => navigateTo("/teams")}>
             <DocumentCardImage
               height={65}
               imageFit={1}

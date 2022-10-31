@@ -331,7 +331,9 @@ export default function CuartoFrioModal() {
   const openIcon: IIconProps = { iconName: 'BulletedList2' }
   return (
     <Stack horizontal grow verticalAlign="center" horizontalAlign="center">
+
       <Stack.Item align="center" verticalFill={true} grow={true}>
+        
         <DocumentCard styles={cardStyles1}>
           <DocumentCardImage
             height={200}
@@ -455,6 +457,7 @@ export default function CuartoFrioModal() {
       /> */}
           </DocumentCardDetails>
         </DocumentCard>
+
       </Stack.Item>
 
       <Stack.Item align="center" verticalFill={true} grow={true}>
@@ -593,6 +596,7 @@ export default function CuartoFrioModal() {
           </div>
         </Modal>
       </Stack.Item>
+
     </Stack>
   )
 }

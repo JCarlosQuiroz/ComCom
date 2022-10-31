@@ -35,6 +35,9 @@ import { Home } from "../pages/Home";
 import NavMenuCustom from "../ui-components/CustomTestComponents/NavMenuCustom";
 import { MainMenu } from "../ui-components/MainMenu";
 import { FetchData } from "../ui-components/CustomTestComponents/FetchData";
+import Count from "../ui-components/CustomTestComponents/Count";
+import Forecast from "../ui-components/CustomTestComponents/Forecast";
+import { ChatInterface } from "../modules/office/infrastructure/components/Teams/Teams";
 
 const routes = [
     { path: "/users", component: Users},
@@ -66,6 +69,9 @@ const routes = [
     { path : "/oxxo", component: OxxoPaysComponent },
     { path : "/mainmenu", component: MainMenu },
     { path : "/navmenucustom", component: NavMenuCustom },
+    { path : "/forecast", component: Forecast },
+    { path : "/custom", component: Count }, 
+    { path : "/teams", component: ChatInterface },
     // { path : "/", component:  },
     // { path : "/", component:  },
     // { path : "/", component:  },

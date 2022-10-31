@@ -14,12 +14,18 @@ import {
 
 import { Images } from "../styles/Theme";
 import WelcomeName from "../ui-components/CustomTestComponents/WelcomeName";
+import { MainMenu } from "../ui-components/MainMenu";
 
 
 // import MainMenu from "../ui-components/MainMenu";
 import { SignInButton } from "../ui-components/UtilityComponents/SignInButton";
 import { SignOutButton } from "../ui-components/UtilityComponents/SignOutButton";
+import { AvatarUser } from "./AvatarUser";
+import CardsSection from "./CardsSection";
+import { DocumentsLists } from "./DocumentsLists";
+import HeaderNav from "./HeaderNav";
 import MenuSolution from "./MenuSolutions";
+import SideNav from "./SideNav";
 
 export function Home() {
   const isAuthenticated = useIsAuthenticated();
@@ -38,6 +44,12 @@ export function Home() {
         <AuthenticatedTemplate>
           <WelcomeName/>
           <MenuSolution/>
+          <AvatarUser/>
+          {/* <HeaderNav/>
+          <DocumentsLists/>
+          <CardsSection/>
+          <SideNav/>
+          // <AvatarUser/> */}
         {/* <MainMenu/> */}
         </AuthenticatedTemplate>
 

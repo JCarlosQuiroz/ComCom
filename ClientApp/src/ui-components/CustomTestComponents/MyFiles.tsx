@@ -10,8 +10,10 @@ import {
     DocumentCardDetails,
     DocumentCardTitle,
     ImageFit,
-    DocumentCardImage
+    DocumentCardImage,
+    Breadcrumb
 } from '@fluentui/react';
+import { itemsWithHeading, _getCustomDivider, _getCustomOverflowIcon } from '../../constants/Breadcrum';
 
 function MyFiles(): JSX.Element {
     // Component styles
@@ -168,8 +170,27 @@ function MyFiles(): JSX.Element {
     ];
 
     return (
+        
         <Stack horizontalAlign='space-evenly' tokens={{ padding: '10px 0px 0px 205px', childrenGap: '2%', maxHeight: '100%', maxWidth: '100%' }}>
-
+        <Breadcrumb
+          style={{
+            fontSize: "1rem",
+          }}
+          styles={{
+            root: {
+              margin: "0px 0px 0px 0px",
+              selectors: {
+                "&:not(:first-child)": {
+                  marginTop: 24,
+                },
+              },
+            },
+          }}
+          items={itemsWithHeading.filter((item) => item.text !== "Counter")}
+          maxDisplayedItems={3}
+          dividerAs={_getCustomDivider}
+          onRenderOverflowIcon={_getCustomOverflowIcon}
+        />
             <Stack horizontalAlign='center' verticalAlign='center' tokens={{ childrenGap: 20 }}>
                <h2>Mis Carpetas</h2>
             </Stack>
